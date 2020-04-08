@@ -1,2 +1,2 @@
-# cs10aspr20-MJT
+# PA06
 ''' problem set rep.'''
