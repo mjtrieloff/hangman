@@ -10,20 +10,9 @@ text = file.read()
 paragraph = text.split("\n\n")
 words = text.split()
 
-def generate(list_of_words):
-    word = list_of_words[random.randrange(0, len(list_of_words))]
-    return word
-
-def print_word( word , guessed_letter ) :
-    global guessed_letters
-    #guessed_letters.append(guessed_letter)
-    #progress = []
-    word = list(word)
-    for letter in word:
-        if letter not in guessed_letters:
-            print('-')
-        elif letter in guessed_letters:
-            print(letter)
+def generate_random_word():
+    word_position = random.randint(0, len(words) - 1)
+    return words[word_position]
 
 
 def play_hangman():
@@ -39,7 +28,7 @@ def play_hangman():
                     print(letter)
 
         guesses_left = 6
-        word = generate(words)
+        word = generate_random_word()
         print("Your word is", len(word), "letters long")
         letter = input("What letter would you like to guess? ")
         done = False
